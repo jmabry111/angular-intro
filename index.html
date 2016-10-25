@@ -1,0 +1,39 @@
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <body>
+    <div ng-app="">
+      <p>Name: <input type="text" ng-model="name"></p>
+      <p ng-bind="name"></p>
+      <p>{{name}}</p>
+	    <p>{{5 + 5}}</p>
+      <div ng-init="quantity=1;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+      </div>
+      <div ng-init="firstName='John';lastName='Doe'">
+        <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+        <p>Last: {{lastName}}, First: {{firstName}}</p>
+      </div>
+      <div ng-init="person={fname:'Jason',lname:'Mabry'}">
+        <p>What's your last name? {person.lname}}</p>
+      </div>
+      <div ng-init="points=[1,15,19,2,14,40]">
+        <p>Team 3 got {{points[2]}} points</p>
+        <ul>
+          <li ng-repeat="x in points">
+            Team {{points.indexOf(x) + 1}} = {{x}}
+          </li>
+        </ul>
+      </div>
+      <div ng-init="info=[
+        {name:'Jason',city:'Figsboro'},
+        {name:'Draper',city:'Raleigh'},
+        {name:'Tim',city:'Bassett'},
+        {name:'Jeff',city:'Collinsville'}]">
+        <ul>
+          <li ng-repeat="n in info">
+            {{n.name + ' is from ' + n.city + '.'}}
+          </li>
+        </ul>
+    </div>
+  </body>
+</html>
